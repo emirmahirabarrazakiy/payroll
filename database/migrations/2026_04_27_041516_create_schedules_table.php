@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('office_id')->constrained('offices')->cascadeOnDelete();
             $table->timestamps();
         });
-    }
+    }   
 
     /**
      * Reverse the migrations.
