@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Filament\Dashboard\Resources\Schedules\Pages;
+namespace App\Filament\Dashboard\Resources\Leaves\Pages;
 
-use App\Filament\Dashboard\Resources\Schedules\ScheduleResource;
-use Filament\Actions\Action;
+use App\Filament\Dashboard\Resources\Leaves\LeaveResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Auth;
+use League\Uri\Builder;
+use Override;
 
-class ListSchedules extends ListRecords
+class ListLeaves extends ListRecords
 {
-    protected static string $resource = ScheduleResource::class;
+    protected static string $resource = LeaveResource::class;
 
     protected function getHeaderActions(): array
     {
@@ -21,7 +22,8 @@ class ListSchedules extends ListRecords
         ];
     }
 
-    protected function getTableQuery(): Builder|Relation|null
+
+    protected function getTableQuery(): EloquentBuilder|Relation|null
     {
         $query = parent::getTableQuery();
 

@@ -3,6 +3,7 @@
 namespace App\Filament\Dashboard\Resources\Attendances\Pages;
 
 use App\Filament\Dashboard\Resources\Attendances\AttendanceResource;
+use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
@@ -13,6 +14,9 @@ class ListAttendances extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            Action  ::make('presensi')
+                ->color('warning')
+                ->url('/presensi'),
             CreateAction::make(),
         ];
     }
